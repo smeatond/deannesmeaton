@@ -1,8 +1,10 @@
-import "./MobileNav.css";
-
-function MobileNav() {
+import "./Nav.css";
+interface iNavProps {
+  isMobile: boolean;
+}
+function Nav(props: iNavProps) {
   return (
-    <nav className="nav nav-mobile">
+    <nav className={props.isMobile ? "nav nav-mobile" : "nav"}>
       <ul>
         <li>
           <a href="/">Home</a>
@@ -18,4 +20,4 @@ function MobileNav() {
   );
 }
 
-export default MobileNav;
+export default Nav;

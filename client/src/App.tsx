@@ -2,8 +2,7 @@ import { useState } from "react";
 import siteLogo from "/DeanneSmeatonLogo_LightMode_Small.svg";
 import "./App.css";
 import useWindowDimensions from "./helpers/WindowDimentions";
-import MainNav from "./components/MainNav";
-import MobileNav from "./components/MobileNav";
+import Nav from "./components/Nav";
 
 function App() {
   const { height, width } = useWindowDimensions();
@@ -16,9 +15,9 @@ function App() {
         <div className="header-section">
           <span className="title">Deanne Smeaton</span>
           <span className="sub-title">Full-stack Developer &#183; Trainer</span>
-          {width >= 600 && <MainNav />}
+          {width >= 600 && <Nav isMobile={false} />}
         </div>
-        {width < 600 && <MobileNav />}
+        {width < 600 && <Nav isMobile={true} />}
       </header>
     </>
   );
