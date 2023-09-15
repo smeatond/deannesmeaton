@@ -1,0 +1,95 @@
+.header {
+  font-family: "Fira Code";
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-areas:
+    "logo header"
+    "nav nav";
+}
+.logo {
+  grid-area: logo;
+  width: 5rem;
+}
+
+.header-section {
+  grid-area: header;
+  align-self: center;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "title"
+    "sub-title";
+}
+
+.title {
+  font-weight: bold;
+}
+
+.sub-title {
+  grid-area: sub-title;
+  font-size: 0.6rem;
+}
+
+.nav {
+  grid-area: nav;
+  padding: 0;
+}
+
+.nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+@media screen and (min-width: 37.5rem) {
+  .header {
+    grid-template-columns: 1fr 4fr;
+    grid-template-areas: "logo header";
+  }
+  .logo {
+    width: 7rem;
+  }
+  .header-section {
+    width: 100%;
+    display: grid;
+    grid-template-rows: 3fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    justify-self: start;
+    grid-template-areas:
+      "title title"
+      "sub-title nav";
+  }
+
+  .title {
+    grid-area: title;
+    font-size: 3rem;
+    align-self: center;
+  }
+
+  .nav {
+    justify-self: end;
+    background-color: #fff;
+  }
+
+  .nav ul {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 4em;
+  }
+
+  .nav ul li:last-child {
+    padding-right: 0.75rem;
+  }
+}
+
+@media screen and (min-width: 45rem) {
+  .sub-title {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (min-width: 60rem) {
+  .logo {
+    width: 15rem;
+  }
+}

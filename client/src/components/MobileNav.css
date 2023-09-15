@@ -1,0 +1,13 @@
+.nav-mobile {
+  margin-top: 0.5rem;
+  background-color: #c7c7c7;
+}
+.nav-mobile ul {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  justify-items: center;
+}
+
+.nav-mobile ul li {
+  padding: 0.25em;
+}

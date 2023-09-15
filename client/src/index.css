@@ -1,0 +1,27 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+a:link,
+a:visited {
+  color: #725cbb;
+}
+
+a:hover {
+  text-decoration: none;
+}
+@media screen and (min-width: 60rem) {
+  body {
+    background-color: #efefef;
+  }
+
+  .main-container {
+    background-color: #fff;
+    width: 90%;
+    margin: auto;
+    padding: 1rem;
+    margin-top: 1rem;
+  }
+}
