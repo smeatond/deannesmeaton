@@ -18,7 +18,7 @@ function Home() {
       </section>
       <section>
         <h2>Latest Blog Posts</h2>
-        <p>Watch this space, this is comming soon!</p>
+        <p>Watch this space, this is coming soon!</p>
       </section>
     </>
   );

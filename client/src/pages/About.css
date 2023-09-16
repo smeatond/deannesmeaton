@@ -1,0 +1,10 @@
+.about-photo {
+  width: 15rem;
+}
+
+@media screen and (min-width: 37.5rem) {
+  .about-photo {
+    float: left;
+    margin-right: 1rem;
+  }
+}
