@@ -1,42 +1,191 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/**HEADER STYLES **/
+.header {
+  font-family: "Fira Code";
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-areas:
+    "logo header"
+    "nav nav";
 }
-
 .logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  grid-area: logo;
+  width: 5rem;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.header-section {
+  grid-area: header;
+  align-self: center;
+  display: grid;
+  grid-template-rows: 3fr 1fr;
+  grid-template-areas:
+    "title"
+    "sub-title";
+}
+
+.header-section {
+  margin-left: 0.5rem;
+}
+.title {
+  font-weight: bold;
+  font-size: 1.7rem;
+}
+
+.sub-title {
+  grid-area: sub-title;
+  font-size: 0.6rem;
+}
+
+.nav {
+  grid-area: nav;
+  padding: 0;
+}
+
+.nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/**FOOTER STYLES **/
+.footer {
+  font-family: "Fira Code";
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  display: grid;
+  background-color: #d3d3d3;
+  padding-left: 0.5em;
+}
+
+.footer-socials span:first-child {
+  font-weight: bold;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 1rem 0;
+}
+.footer-socials {
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+}
+
+.footer-socials > span {
+  align-self: center;
+  padding: 0.1rem;
+}
+
+.footer-socials > span > a {
+  display: grid;
+  grid-template-columns: 1fr 9fr;
+  align-items: center;
+}
+
+.logo-social {
+  width: 1.2rem;
+}
+
+.logo-social.x {
+  width: 0.9rem;
+}
+/**MAIN STYLES**/
+.main {
+  padding: 0 1rem;
+}
+
+@media screen and (min-width: 37.5rem) {
+  /**HEADER STYLES **/
+  .header {
+    grid-template-columns: 1fr 7fr;
+    grid-template-areas: "logo header";
   }
-  to {
-    transform: rotate(360deg);
+  .logo {
+    width: 7rem;
+  }
+  .header-section {
+    width: 98%;
+    display: grid;
+    grid-template-rows: 3fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    justify-self: start;
+    grid-template-areas:
+      "title title"
+      "sub-title nav";
+  }
+
+  .title {
+    grid-area: title;
+    font-size: 3rem;
+    align-self: center;
+  }
+
+  .nav {
+    justify-self: end;
+    background-color: #fff;
+  }
+
+  .nav ul {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 4em;
+  }
+
+  .nav ul li:last-child {
+    padding-right: 0.75rem;
+  }
+
+  /**FOOTER STYLES **/
+  .footer {
+    padding: 0rem 0.25rem 0.5rem 0;
+  }
+  .footer-content {
+    justify-self: center;
+    gap: 5rem;
+  }
+  .footer-socials {
+    grid-template-columns: repeat(4, 0.75fr);
+    grid-template-rows: 1fr;
+    justify-self: end;
+  }
+
+  .footer-socials > span {
+    align-self: normal;
+  }
+
+  .footer-socials > span > a {
+    gap: 0.5rem;
+  }
+
+  .footer a,
+  .footer a:link,
+  .footer a:visited {
+    color: #2e2451;
+  }
+
+  /**MAIN STYLES**/
+  .main {
+    padding: 2rem;
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+@media screen and (min-width: 45rem) {
+  /**HEADER STYLES **/
+  .sub-title {
+    font-size: 1rem;
   }
 }
 
-.card {
-  padding: 2em;
-}
+@media screen and (min-width: 60rem) {
+  /**HEADER STYLES **/
+  .logo {
+    width: 15rem;
+  }
 
-.read-the-docs {
-  color: #888;
+  /**FOOTER STYLES **/
+  .footer {
+    grid-template-columns: 1fr 1fr;
+  }
+  .footer-socials {
+    align-self: center;
+  }
 }

@@ -1,0 +1,18 @@
+.nav-mobile {
+  margin-top: 0.5rem;
+  background-color: #d3d3d3;
+}
+.nav-mobile ul {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  padding-left: 0.5rem;
+}
+
+.nav-mobile ul li {
+  padding: 0.25em;
+}
+
+.nav a.active {
+  text-decoration: none;
+  font-weight: bold;
+}
