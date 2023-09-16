@@ -13,7 +13,7 @@ function Nav(props: iNavProps) {
           <a href="#">About</a>
         </li>
         <li>
-          <a href="/">Blog</a>
+          <a href="#">Blog</a>
         </li>
       </ul>
     </nav>
