@@ -5,7 +5,7 @@ import xLogo from "/logos/x-logo.png";
 import "./App.css";
 import useWindowDimensions from "./helpers/WindowDimentions";
 import Nav from "./components/Nav";
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 interface IApp {
   outlet?: any;
@@ -16,15 +16,24 @@ function App(props: IApp) {
   return (
     <>
       <header className="header">
-        <img src={siteLogo} className="logo" alt="Deanne Smeaton" />{" "}
+        <Link to={"/"}>
+          <img
+            src={siteLogo}
+            className="logo"
+            alt="Deanne Smeaton"
+            title="Deanne Smeaton"
+          />
+        </Link>
         <div className="header-section">
           <span className="title">Deanne Smeaton</span>
-          <span className="sub-title">Full-stack Developer &#183; Trainer</span>
+          <span className="sub-title">
+            Full-stack Developer &#183; Educator
+          </span>
           {width >= 600 && <Nav isMobile={false} />}
         </div>
         {width < 600 && <Nav isMobile={true} />}
       </header>
-      <main>{props.outlet ? props.outlet : <Outlet />}</main>
+      <main className="main">{props.outlet ? props.outlet : <Outlet />}</main>
       <footer className="footer">
         <div>
           <span>Follow me:</span>{" "}

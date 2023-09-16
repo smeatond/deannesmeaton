@@ -11,3 +11,8 @@
 .nav-mobile ul li {
   padding: 0.25em;
 }
+
+.nav a.active {
+  text-decoration: none;
+  font-weight: bold;
+}

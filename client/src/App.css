@@ -83,18 +83,22 @@
 .logo-social.x {
   width: 0.9rem;
 }
+/**MAIN STYLES**/
+.main {
+  padding: 0 1rem;
+}
 
 @media screen and (min-width: 37.5rem) {
   /**HEADER STYLES **/
   .header {
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 1fr 7fr;
     grid-template-areas: "logo header";
   }
   .logo {
     width: 7rem;
   }
   .header-section {
-    width: 99%;
+    width: 98%;
     display: grid;
     grid-template-rows: 3fr 1fr;
     grid-template-columns: 1fr 1fr;
@@ -147,6 +151,11 @@
   .footer a:link,
   .footer a:visited {
     color: #2e2451;
+  }
+
+  /**MAIN STYLES**/
+  .main {
+    padding: 2rem;
   }
 }
 

@@ -2,6 +2,7 @@ import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ReactDOM from "react-dom/client";
 import "@fontsource/fira-code";
+import "@fontsource/roboto";
 import App from "./App.tsx";
 import "./index.css";
 import ErrorPage from "./pages/ErrorPage.tsx";
