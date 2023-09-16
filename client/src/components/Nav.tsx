@@ -1,4 +1,6 @@
 import "./Nav.css";
+import { Link } from "react-router-dom";
+
 interface iNavProps {
   isMobile: boolean;
 }
@@ -7,13 +9,13 @@ function Nav(props: iNavProps) {
     <nav className={props.isMobile ? "nav nav-mobile" : "nav"}>
       <ul>
         <li>
-          <a href="/">Home</a>
+          <Link to={"/"}>Home</Link>
         </li>
         <li>
-          <a href="#">About</a>
+          <Link to={"about"}>About</Link>
         </li>
         <li>
-          <a href="#">Blog</a>
+          <Link to={"blog"}>Blog</Link>
         </li>
       </ul>
     </nav>

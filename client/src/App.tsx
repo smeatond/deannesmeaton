@@ -1,4 +1,3 @@
-import { useState } from "react";
 import siteLogo from "/branding/ds-logo-lightmode-sml.svg";
 import githubLogo from "/logos/github-mark.png";
 import linkedinLogo from "/logos/li-in-logo.png";
@@ -6,11 +5,14 @@ import xLogo from "/logos/x-logo.png";
 import "./App.css";
 import useWindowDimensions from "./helpers/WindowDimentions";
 import Nav from "./components/Nav";
+import { Outlet } from "react-router-dom";
 
-function App() {
-  const { height, width } = useWindowDimensions();
-  console.log(height);
-  console.log(width);
+interface IApp {
+  outlet?: any;
+}
+
+function App(props: IApp) {
+  const { width } = useWindowDimensions();
   return (
     <>
       <header className="header">
@@ -22,7 +24,7 @@ function App() {
         </div>
         {width < 600 && <Nav isMobile={true} />}
       </header>
-      <main></main>
+      <main>{props.outlet ? props.outlet : <Outlet />}</main>
       <footer className="footer">
         <div>
           <span>Follow me:</span>{" "}
