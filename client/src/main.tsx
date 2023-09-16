@@ -9,6 +9,7 @@ import ErrorPage from "./pages/ErrorPage.tsx";
 import About from "./pages/About.tsx";
 import Home from "./pages/Home.tsx";
 import Blog from "./pages/Blog.tsx";
+import Privacy from "./pages/Privacy.tsx";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
       {
         path: "/blog",
         element: <Blog />,
+      },
+      {
+        path: "/privacy",
+        element: <Privacy />,
       },
     ],
   },

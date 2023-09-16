@@ -50,29 +50,34 @@
 .footer {
   font-family: "Fira Code";
   margin-top: 0.5rem;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   display: grid;
   background-color: #d3d3d3;
+  padding-left: 0.5em;
 }
 
-.footer span:first-child {
+.footer-socials span:first-child {
   font-weight: bold;
 }
 
-.footer > div {
-  justify-self: center;
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 1rem 0;
+}
+.footer-socials {
   display: grid;
   grid-template-rows: repeat(4, 1fr);
 }
 
-.footer > div > span {
+.footer-socials > span {
   align-self: center;
   padding: 0.1rem;
 }
 
-.footer > div > span > a {
+.footer-socials > span > a {
   display: grid;
-  grid-template-columns: 1fr 4fr;
+  grid-template-columns: 1fr 9fr;
   align-items: center;
 }
 
@@ -131,19 +136,23 @@
 
   /**FOOTER STYLES **/
   .footer {
-    padding: 1rem 0.25rem 0.5rem 0;
+    padding: 0rem 0.25rem 0.5rem 0;
   }
-  .footer > div {
+  .footer-content {
+    justify-self: center;
+    gap: 5rem;
+  }
+  .footer-socials {
     grid-template-columns: repeat(4, 0.75fr);
     grid-template-rows: 1fr;
     justify-self: end;
   }
 
-  .footer > div > span {
+  .footer-socials > span {
     align-self: normal;
   }
 
-  .footer > div > span > a {
+  .footer-socials > span > a {
     gap: 0.5rem;
   }
 
@@ -170,5 +179,13 @@
   /**HEADER STYLES **/
   .logo {
     width: 15rem;
+  }
+
+  /**FOOTER STYLES **/
+  .footer {
+    grid-template-columns: 1fr 1fr;
+  }
+  .footer-socials {
+    align-self: center;
   }
 }

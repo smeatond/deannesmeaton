@@ -35,7 +35,11 @@ function App(props: IApp) {
       </header>
       <main className="main">{props.outlet ? props.outlet : <Outlet />}</main>
       <footer className="footer">
-        <div>
+        <div className="footer-content">
+          <Link to={"/privacy"}>Privacy</Link>
+          <a href="mailto:deanne.smeaton@gmail.com">Email</a>
+        </div>
+        <div className="footer-socials">
           <span>Follow me:</span>{" "}
           <span>
             <a
