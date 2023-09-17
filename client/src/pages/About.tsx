@@ -1,5 +1,5 @@
-import photo from "/images/deanne.png";
-import cv from "/docs/DeanneSmeaton_UpdatedCV2023_public.pdf";
+import photo from "../assets/images/deanne.png";
+import cv from "../assets/docs/DeanneSmeaton_UpdatedCV2023_public.pdf";
 import "./About.css";
 function About() {
   return (

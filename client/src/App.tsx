@@ -1,7 +1,7 @@
-import siteLogo from "/branding/ds-logo-lightmode-sml.svg";
-import githubLogo from "/logos/github-mark.png";
-import linkedinLogo from "/logos/li-in-logo.png";
-import xLogo from "/logos/x-logo.png";
+import siteLogo from "./assets/branding/ds-logo-lightmode-sml.svg";
+import githubLogo from "./assets/logos/github-mark.png";
+import linkedinLogo from "./assets/logos/li-in-logo.png";
+import xLogo from "./assets/logos/x-logo.png";
 import "./App.css";
 import useWindowDimensions from "./helpers/WindowDimentions";
 import Nav from "./components/Nav";
