@@ -1,0 +1,12 @@
+{
+    "email" : "deanne.smeaton@gmail.com",
+    "twiiter" : {
+        "twiiterUrl" : "https://twitter.com/deanne_smeaton",
+        "twitterHandle" : "@deanne_smeaton"
+    },
+    "linkedInUrl" : "https://www.linkedin.com/in/smeatond/",
+    "gitHub" : {
+        "gitHubUrl" : "https://github.com/smeatond",
+        "gitHubHandle" : "@smeatond"
+    } 
+}

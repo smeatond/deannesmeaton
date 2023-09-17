@@ -1,5 +1,6 @@
 import photo from "../assets/images/deanne.png";
 import cv from "../assets/docs/DeanneSmeaton_UpdatedCV2023_public.pdf";
+import websiteDetails from "../config/website-details.json";
 import "./About.css";
 function About() {
   return (
@@ -48,9 +49,9 @@ function About() {
         <p>
           If you'd like to connect or collaborate, please don't hesitate to
           reach out to me via{" "}
-          <a href="mailto:deanne.smeaton@gmail.com">email</a> or connect with me
-          on <a href="https://www.linkedin.com/in/smeatond/">LinkedIn</a>. Let's
-          explore new horizons in the world of technology together.{" "}
+          <a href={`mailto:${websiteDetails.email}`}>email</a> or connect with
+          me on <a href={websiteDetails.linkedInUrl}>LinkedIn</a>. Let's explore
+          new horizons in the world of technology together.{" "}
         </p>
       </section>
       <section>
