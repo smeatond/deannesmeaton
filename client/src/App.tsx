@@ -13,10 +13,16 @@ interface IApp {
 
 function App(props: IApp) {
   const { width } = useWindowDimensions();
+  const subTitle: React.ReactNode = (
+    <>
+      <span className="sub-title">Full-stack Developer &#183; Educator</span>
+    </>
+  );
+  const mobileWidth: number = 760;
   return (
     <>
       <header className="header">
-        <Link to={"/"}>
+        <Link to={"/"} className="logo-link">
           <img
             src={siteLogo}
             className="logo"
@@ -26,12 +32,19 @@ function App(props: IApp) {
         </Link>
         <div className="header-section">
           <span className="title">Deanne Smeaton</span>
-          <span className="sub-title">
-            Full-stack Developer &#183; Educator
-          </span>
-          {width >= 600 && <Nav isMobile={false} />}
+          {width >= mobileWidth && (
+            <>
+              {subTitle}
+              <Nav isMobile={false} />
+            </>
+          )}
         </div>
-        {width < 600 && <Nav isMobile={true} />}
+        {width < mobileWidth && (
+          <>
+            {subTitle}
+            <Nav isMobile={true} />
+          </>
+        )}
       </header>
       <main className="main">{props.outlet ? props.outlet : <Outlet />}</main>
       <footer className="footer">
