@@ -2,9 +2,16 @@ import photo from "../assets/images/deanne.png";
 import cv from "../assets/docs/DeanneSmeaton_UpdatedCV2023_public.pdf";
 import websiteDetails from "../config/website-details.json";
 import "./About.css";
+import MetaTags from "../components/MetaTags";
+import { SocialTypes } from "../helpers/Const";
 function About() {
   return (
     <>
+      <MetaTags
+        title="About Me"
+        description="About Deanne Smeaton, a full-stack developer from Mid-Canterbury New Zealand."
+        type={SocialTypes.Website}
+      />
       <h1>About Me</h1>{" "}
       <section>
         <img

@@ -1,4 +1,6 @@
 import { useRouteError, isRouteErrorResponse, Link } from "react-router-dom";
+import MetaTags from "../components/MetaTags";
+import { SocialTypes } from "../helpers/Const";
 
 export default function ErrorPage() {
   const error = useRouteError();
@@ -21,6 +23,11 @@ export default function ErrorPage() {
     <div id="error-page">
       {pageNotFound ? (
         <>
+          <MetaTags
+            title="Error"
+            description="Error page, something has gone wrong."
+            type={SocialTypes.Website}
+          />
           <h1>Oops! This page cannot be found.</h1>
           <p>Sorry, the page you are trying to find no longer exists. </p>
           <p>
