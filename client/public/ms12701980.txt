@@ -1,0 +1,5 @@
+﻿{
+  "Description": "Domain ownership verification file for Microsoft 365 - place in the website root",
+  "Domain": "deannesmeaton.co.nz",
+  "Id": "6c5b64cb-d490-4d0e-9ce6-687457e79b97"
+}
