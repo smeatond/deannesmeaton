@@ -1,4 +1,4 @@
-Sitemap: https://progressakl.co.nz/sitemap
+Sitemap: https://www.deannesmeaton.co.nz/sitemap.xml
 User-agent: *
 Disallow: /*.json$
 Disallow: /*.txt$
