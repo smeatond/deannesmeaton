@@ -1,6 +1,16 @@
+import { Helmet } from "react-helmet-async";
+import MetaTags from "../components/MetaTags";
+import { SocialTypes } from "../helpers/Const";
+
 function Privacy() {
   return (
     <>
+      <MetaTags
+        title="Privacy"
+        description="Privacy and terms and conditions of Deanne Smeaton website."
+        type={SocialTypes.Website}
+      />
+
       <h1>TLDR;</h1>
       <p>
         Solely my personal opinions are shared on this website, and your use of

@@ -1,8 +1,15 @@
 import { Link } from "react-router-dom";
+import MetaTags from "../components/MetaTags";
+import { SocialTypes } from "../helpers/Const";
 
 function Home() {
   return (
     <>
+      <MetaTags
+        title=""
+        description="Deanne Smeaton's corner of the digital relm, a full-stack developer from Mid Canterbury, New Zealand."
+        type={SocialTypes.Website}
+      />
       <section>
         <h1 lang="mi">Kia ora</h1>
         <p>
