@@ -1,14 +1,13 @@
-import MetaTags from "../components/MetaTags";
 import { SocialTypes } from "../helpers/Const";
 
 function Privacy() {
   return (
     <>
-      <MetaTags
+      {/* <MetaTags
         title="Privacy"
         description="Privacy and terms and conditions of Deanne Smeaton website."
         type={SocialTypes.Website}
-      />
+  /> */}
 
       <h1>TLDR;</h1>
       <p>
