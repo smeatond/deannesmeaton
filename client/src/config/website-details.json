@@ -8,5 +8,46 @@
     "gitHub" : {
         "gitHubUrl" : "https://github.com/smeatond",
         "gitHubHandle" : "@smeatond"
-    } 
+    }, 
+    "pagesMetaDetails" : {
+        "home":
+        {
+            "title" : "",
+            "description": "Deanne Smeaton's corner of the digital relm, a full-stack developer from Mid Canterbury, New Zealand.",
+            "type": "website",
+            "image": ""
+        },
+        "about":
+        {
+            "title" : "About Me",
+            "description": "About Deanne Smeaton, a full-stack developer from Mid-Canterbury New Zealand.",
+            "type": "website",
+            "image": ""
+        },
+        "privacy":
+        {
+            "title" : "Privacy",
+            "description": "Privacy and terms and conditions of Deanne Smeaton website.",
+            "type": "website",
+            "image": ""
+        },
+        "underConstruction": {
+            "title" : "Coming soon",
+            "description": "Website or page under construction.",
+            "type": "website",
+            "image": ""
+        },
+        "blog" : {
+            "title" : "Blog",
+            "description": "Deanne Smeaton latest blog posts.",
+            "type": "article",
+            "image": ""
+        },
+        "pageNotFound" : {
+            "title" : "Page not found",
+            "description": "Page not found.",
+            "type": "website",
+            "image": ""
+        }
+    }
 }

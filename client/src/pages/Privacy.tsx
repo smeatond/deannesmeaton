@@ -1,13 +1,14 @@
-import { SocialTypes } from "../helpers/Const";
-
+import websiteDetails from "../config/website-details.json";
+import MetaTags from "../components/MetaTags";
 function Privacy() {
   return (
     <>
-      {/* <MetaTags
-        title="Privacy"
-        description="Privacy and terms and conditions of Deanne Smeaton website."
-        type={SocialTypes.Website}
-  /> */}
+      <MetaTags
+        title={websiteDetails.pagesMetaDetails.privacy.title}
+        description={websiteDetails.pagesMetaDetails.privacy.description}
+        type={websiteDetails.pagesMetaDetails.privacy.type}
+        image={websiteDetails.pagesMetaDetails.privacy.image}
+      />
 
       <h1>TLDR;</h1>
       <p>
