@@ -3,6 +3,8 @@ import path from 'path'
 import { fileURLToPath } from 'url'
 import express from 'express'
 import {createServer as createViteServer } from 'vite';
+import { GetPageDetails } from "./server/utility.js";
+
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
@@ -22,7 +24,7 @@ async function createServer() {
 
   app.use('*', async (req, res, next) => {
     const url = req.originalUrl
-    console.log(url);
+    const fullUrl = req.protocol + '://' + req.get('host');
     try {
       // 1. Read index.html
       let template = fs.readFileSync(
@@ -47,13 +49,15 @@ async function createServer() {
   
       // 5. Inject the app-rendered HTML into the template.
       let html = template.replace(`<!--ssr-outlet-->`, appHtml)
-      let title = "Deanne Smeaton"
       //update OG
-      if(url == "/blog") {
-        console.log("got here");
-        title = `${title}: Blog`;
-      }
-      html = template.replace(`$OG_TITLE`, title);
+      const pageDetails = GetPageDetails(url, fullUrl);
+      console.log(pageDetails);
+      html = html.replaceAll(`$OG_TITLE`, pageDetails.title);
+      html = html.replace(`$OG_TYPE`, pageDetails.type);
+      html = html.replaceAll(`$OG_DESCRIPTION`, pageDetails.description);
+      html = html.replace(`$OG_IMAGE`, fullUrl +  pageDetails.image);
+      html = html.replace(`$OG_URL`, fullUrl + url);
+
       // 6. Send the rendered HTML back.
       res.status(200).set({ 'Content-Type': 'text/html' }).end(html)
     } catch (e) {

@@ -15,39 +15,39 @@
             "title" : "",
             "description": "Deanne Smeaton's corner of the digital relm, a full-stack developer from Mid Canterbury, New Zealand.",
             "type": "website",
-            "image": ""
+            "image": "/assets/branding/ds-logo-lightmode-lge.svg"
         },
         "about":
         {
             "title" : "About Me",
             "description": "About Deanne Smeaton, a full-stack developer from Mid-Canterbury New Zealand.",
             "type": "website",
-            "image": ""
+            "image": "/assets/branding/ds-logo-lightmode-lge.svg"
         },
         "privacy":
         {
             "title" : "Privacy",
             "description": "Privacy and terms and conditions of Deanne Smeaton website.",
             "type": "website",
-            "image": ""
+            "image": "/assets/branding/ds-logo-lightmode-lge.svg"
         },
         "underConstruction": {
             "title" : "Coming soon",
             "description": "Website or page under construction.",
             "type": "website",
-            "image": ""
+            "image": "/assets/branding/ds-logo-lightmode-lge.svg"
         },
         "blog" : {
             "title" : "Blog",
             "description": "Deanne Smeaton latest blog posts.",
             "type": "article",
-            "image": ""
+            "image": "/assets/branding/ds-logo-lightmode-lge.svg"
         },
         "pageNotFound" : {
             "title" : "Page not found",
             "description": "Page not found.",
             "type": "website",
-            "image": ""
+            "image": "/assets/branding/ds-logo-lightmode-lge.svg"
         }
     }
 }
