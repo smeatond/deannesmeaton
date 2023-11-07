@@ -1,12 +1,13 @@
 import { useRouteError, isRouteErrorResponse, Link } from "react-router-dom";
+import websiteDetails from "../config/website-details.json";
 import MetaTags from "../components/MetaTags";
-import { SocialTypes } from "../helpers/Const";
 
 export default function ErrorPage() {
   const error = useRouteError();
   let errorMessage: string;
   let pageNotFound: boolean = false;
   if (isRouteErrorResponse(error)) {
+    console.log(error);
     // error is type `ErrorResponse`
     errorMessage = error.data || error.statusText;
     pageNotFound = error.status === 404;
@@ -24,9 +25,12 @@ export default function ErrorPage() {
       {pageNotFound ? (
         <>
           <MetaTags
-            title="Error"
-            description="Error page, something has gone wrong."
-            type={SocialTypes.Website}
+            title={websiteDetails.pagesMetaDetails.pageNotFound.title}
+            description={
+              websiteDetails.pagesMetaDetails.pageNotFound.description
+            }
+            type={websiteDetails.pagesMetaDetails.pageNotFound.type}
+            image={websiteDetails.pagesMetaDetails.pageNotFound.image}
           />
           <h1>Oops! This page cannot be found.</h1>
           <p>Sorry, the page you are trying to find no longer exists. </p>

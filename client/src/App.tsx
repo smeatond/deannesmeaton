@@ -6,16 +6,17 @@ import "./App.css";
 import useWindowDimensions from "./helpers/WindowDimentions";
 import Nav from "./components/Nav";
 import { Link, Outlet } from "react-router-dom";
-import { HelmetProvider } from "react-helmet-async";
 
 import websiteDetails from "./config/website-details.json";
+import { HelmetProvider } from "react-helmet-async";
 
 interface IApp {
   outlet?: any;
 }
 
 function App(props: IApp) {
-  const { width } = useWindowDimensions();
+  /// move to dinotmount or typeof window !== const { width } = useWindowDimensions();
+  const width = 1000;
   const subTitle: React.ReactNode = (
     <>
       <span className="sub-title">Full-stack Developer &#183; Educator</span>

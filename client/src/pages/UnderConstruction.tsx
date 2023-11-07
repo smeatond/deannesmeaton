@@ -1,13 +1,15 @@
+import websiteDetails from "../config/website-details.json";
 import MetaTags from "../components/MetaTags";
-import { SocialTypes } from "../helpers/Const";
-
 function UnderConstruction() {
   return (
     <>
       <MetaTags
-        title="Coming soon"
-        description="Website or page under construction."
-        type={SocialTypes.Website}
+        title={websiteDetails.pagesMetaDetails.underConstruction.title}
+        description={
+          websiteDetails.pagesMetaDetails.underConstruction.description
+        }
+        type={websiteDetails.pagesMetaDetails.underConstruction.type}
+        image={websiteDetails.pagesMetaDetails.underConstruction.image}
       />
       <h1>Coming soon!</h1>
       <p>
