@@ -50,7 +50,7 @@ async function createServer() {
       // 5. Inject the app-rendered HTML into the template.
       let html = template.replace(`<!--ssr-outlet-->`, appHtml)
       //update OG
-      const pageDetails = GetPageDetails(url, fullUrl);
+      const pageDetails = GetPageDetails(url);
       console.log(pageDetails);
       html = html.replaceAll(`$OG_TITLE`, pageDetails.title);
       html = html.replace(`$OG_TYPE`, pageDetails.type);
