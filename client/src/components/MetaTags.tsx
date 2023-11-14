@@ -23,7 +23,6 @@ function MetaTags(props: iMetaTagsProps) {
         <meta property="og:description" content={props.description} />
         <meta property="og:image" content={`${url.replace(/\/$/, "")}${img}`} />
         <meta property="og:url" content={url} />
-        <meta name="twitter:card" content="summary_large_image" />
       </Helmet>
     </>
   );
