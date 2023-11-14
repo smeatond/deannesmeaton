@@ -3,25 +3,25 @@
     <url>
       <loc>https://www.deannesmeaton.co.nz</loc>
       <lastmod>2023-09-20</lastmod>
-      <changeFreq>never</changeFreq>
+      <changefreq>never</changefreq>
       <priority>0.8</priority>
     </url>
     <url>
       <loc>https://www.deannesmeaton.co.nz/about</loc>
       <lastmod>2023-09-20</lastmod>
-      <changeFreq>yearly</changeFreq>
+      <changefreq>yearly</changefreq>
       <priority>0.5</priority>
     </url>
     <url>
       <loc>https://www.deannesmeaton.co.nz/blog</loc>
       <lastmod>2023-09-20</lastmod>
-      <changeFreq>monthly</changeFreq>
+      <changefreq>monthly</changefreq>
       <priority>0.8</priority>
     </url>
     <url>
       <loc>https://www.deannesmeaton.co.nz/privacy</loc>
       <lastmod>2023-09-20</lastmod>
-      <changeFreq>never</changeFreq>
+      <changefreq>never</changefreq>
       <priority>0.5</priority>
     </url>
   </urlset>
