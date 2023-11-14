@@ -2,107 +2,75 @@ import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
 import express from 'express'
+import {createServer as createViteServer } from 'vite';
 import { GetPageDetails } from "./server/utility.js";
 
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
-const isTest = process.env.VITEST
 
-export async function createServer(
-  root = process.cwd(),
-  isProd = process.env.NODE_ENV === 'production',
-  hmrPort,
-) {
-  const resolve = (p) => path.resolve(__dirname, p)
+async function createServer() {
+    const app = express()
 
-  const indexProd = isProd
-    ? fs.readFileSync(resolve('dist/client/index.html'), 'utf-8')
-    : '';
+     // Create Vite server in middleware mode and configure the app type as
+  // 'custom', disabling Vite's own HTML serving logic so parent server
+  // can take control
+  const vite = await createViteServer({
+    server: { middlewareMode: true },
+    appType: 'custom'
+  })
+ // Use vite's connect instance as middleware. If you use your own
+  // express router (express.Router()), you should use router.use
+  app.use(vite.middlewares)
 
-    const app = express();
-    /**
-   * @type {import('vite').ViteDevServer}
-   */
-  let vite;
-  if (!isProd) {
-    vite = await (
-      await import('vite')
-    ).createServer({
-      root,
-      logLevel: !isProd ? 'error' : 'info',
-      server: {
-        middlewareMode: true,
-        watch: {
-          usePolling: true,
-          interval: 100,
-        },
-        hmr: {
-          port: hmrPort,
-        },
-      },
-      appType: 'custom',
-    })
-    app.use(vite.middlewares)
-  } else {
-    app.use((await import('compression')).default())
-    app.use(
-      (await import('serve-static')).default(resolve('dist/client'), {
-        index: false,
-      }),
-    )
-  
-    }
   app.use('*', async (req, res, next) => {
     const url = req.originalUrl
     const fullUrl = req.protocol + '://' + req.get('host');
-    let render, template;
     try {
-
-      if(!isProd) {
-        template = fs.readFileSync(resolve('index.html'), 'utf-8');
-        template = await vite.transformIndexHtml(url, template)
-
-      
-      render  = (await vite.ssrLoadModule('/src/entry-server.tsx')).render;
-      }
-      else {
-        template = indexProd;
-        render = (await import('./dist/server/entry-server.js')).render;
-      }
+      // 1. Read index.html
+      let template = fs.readFileSync(
+        path.resolve(__dirname, 'index.html'),
+        'utf-8',
+      )
   
-      const context = {}
-      const appHtml = render(url, context)
+      // 2. Apply Vite HTML transforms. This injects the Vite HMR client,
+      //    and also applies HTML transforms from Vite plugins, e.g. global
+      //    preambles from @vitejs/plugin-react
+      template = await vite.transformIndexHtml(url, template)
   
-      if (context.url) {
-        return res.redirect(301, context.url)
-      }
-
+      // 3. Load the server entry. ssrLoadModule automatically transforms
+      //    ESM source code to be usable in Node.js! There is no bundling
+      //    required, and provides efficient invalidation similar to HMR.
+      const { render } = await vite.ssrLoadModule('/src/entry-server.tsx')
+  
+      // 4. render the app HTML. This assumes entry-server.js's exported
+      //     `render` function calls appropriate framework SSR APIs,
+      //    e.g. ReactDOMServer.renderToString()
+      const appHtml = await render(url)
+  
+      // 5. Inject the app-rendered HTML into the template.
       let html = template.replace(`<!--ssr-outlet-->`, appHtml)
       //update OG
       const pageDetails = GetPageDetails(url);
-    
+      console.log(pageDetails);
       html = html.replaceAll(`$OG_TITLE`, pageDetails.title);
       html = html.replace(`$OG_TYPE`, pageDetails.type);
       html = html.replaceAll(`$OG_DESCRIPTION`, pageDetails.description);
       html = html.replace(`$OG_IMAGE`, fullUrl +  pageDetails.image);
       html = html.replace(`$OG_URL`, fullUrl + url);
 
-  
+      // 6. Send the rendered HTML back.
       res.status(200).set({ 'Content-Type': 'text/html' }).end(html)
     } catch (e) {
-      !isProd && vite.ssrFixStacktrace(e)
-      console.log(e.stack)
-      res.status(500).end(e.stack)
+      // If an error is caught, let Vite fix the stack trace so it maps back
+      // to your actual source code.
+      vite.ssrFixStacktrace(e)
+      next(e)
     }
   });
-  
 
-  return { app, vite }
+ 
+
+  app.listen(5173)
 }
-if (!isTest) {
-  createServer().then(({ app }) =>
-    app.listen(5173, () => {
-      console.log('http://localhost:5173')
-    }),
-  )
-}
+
+createServer();

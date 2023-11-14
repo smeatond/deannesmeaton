@@ -5,9 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "node server.js",
-    "build": "npm run build:client && npm run build:server",
     "build:client": "vite build --outDir dist/client",
-    "build:server": "vite build --outDir dist/server --ssr src/entry-server.tsx",
+    "build:server": "vite build --outDir dist/server --ssr src/entry-server.js",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
