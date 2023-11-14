@@ -3,14 +3,14 @@ import cv from "../assets/docs/DeanneSmeaton_UpdatedCV2023_public.pdf";
 import websiteDetails from "../config/website-details.json";
 import "./About.css";
 import MetaTags from "../components/MetaTags";
+import { SocialTypes } from "../helpers/Const";
 function About() {
   return (
     <>
       <MetaTags
-        title={websiteDetails.pagesMetaDetails.about.title}
-        description={websiteDetails.pagesMetaDetails.about.description}
-        type={websiteDetails.pagesMetaDetails.about.type}
-        image={websiteDetails.pagesMetaDetails.about.image}
+        title="About Me"
+        description="About Deanne Smeaton, a full-stack developer from Mid-Canterbury New Zealand."
+        type={SocialTypes.Website}
       />
       <h1>About Me</h1>{" "}
       <section>
