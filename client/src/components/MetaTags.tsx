@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet-async";
-import defaultImage from "../assets/branding/ds-logo-lightmode-lge.svg";
+import defaultImage from "../assets/branding/ds-logo-lightmode-lge.png";
 
 interface iMetaTagsProps {
   title: string;
