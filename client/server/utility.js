@@ -5,6 +5,7 @@ const GetPageDetails = (url) => {
   let details = {};
   switch (url) {
     case "/blog":
+      console.log("blog");
       //todo update when blog added
       details = {
         title: GetTitle(
@@ -17,6 +18,7 @@ const GetPageDetails = (url) => {
       };
       break;
     case "/about":
+      console.log("abou");
       details = {
         title: GetTitle(websiteDetails.pagesMetaDetails.about.title),
         description: websiteDetails.pagesMetaDetails.about.description,
@@ -25,6 +27,7 @@ const GetPageDetails = (url) => {
       };
       break;
     case "/privacy":
+      console.log("provacy");
       details = {
         title: GetTitle(websiteDetails.pagesMetaDetails.privacy.title),
         description: websiteDetails.pagesMetaDetails.privacy.description,
@@ -33,6 +36,7 @@ const GetPageDetails = (url) => {
       };
       break;
     default:
+      console.log("default");
       details = {
         title: GetTitle(websiteDetails.pagesMetaDetails.home.title),
         description: websiteDetails.pagesMetaDetails.home.description,
